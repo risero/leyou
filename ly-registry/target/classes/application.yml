@@ -1,0 +1,17 @@
+server:
+  port: 10086
+
+spring:
+  application:
+    name: ly-registry
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    register-with-eureka: false # eureka 不注册自己
+    should-unregister-on-shutdown: false # eureka 不拉取自己的服务
+    registry-fetch-interval-seconds: 5
+  server:
+    eviction-interval-timer-in-ms: 5000
+    enable-self-preservation: false

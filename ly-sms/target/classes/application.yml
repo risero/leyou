@@ -1,0 +1,23 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: sms-service
+
+  # 配置RabbitMQ
+  rabbitmq:
+    username: leyou
+    password: li.13798908494
+    virtual-host: /leyou
+    host: 192.168.175.147
+
+  # 配置redis
+  redis:
+    host: 192.168.175.147
+ly:
+  sms:
+    apikey: 21ad42623da6a935e68f530a47cfdbad # 你自己的apikey
+    userId: E10724
+    pwd: uNh86T
+    ipAddress1: api02.monyun.cn:7901

@@ -1,0 +1,31 @@
+server:
+  port: 8083
+
+spring:
+  # spring项目名称
+  application:
+    name: search-service
+    # RabbitMQ，消费者配置
+  rabbitmq:
+    username: leyou
+    password: li.13798908494
+    virtual-host: /leyou
+    host: 192.168.175.147
+
+  # elasticsearch配置
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.175.147:9300 # 集群的地址:端口
+
+  jackson:
+    default-property-inclusion: non_null # 默认包含不为null的字段
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    registry-fetch-interval-seconds: 5 # 配置拉取服务列表的周期
+  instance:
+    prefer-ip-address: true
+    ip-address: localhost

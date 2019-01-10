@@ -1,0 +1,37 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: item-service
+
+  # RabbitMQ 配置
+  rabbitmq:
+    host: 192.168.175.147
+    virtual-host: /leyou
+    username: leyou
+    password: li.13798908494
+    template:
+      # 重试配置
+      retry:
+        enabled: true # 开启重试
+        initial-interval: 10000ms # 初始化重试周期
+        max-interval: 30000ms # 最大重试周期
+        multiplier: 2 # 重试倍数，如果第二次重试，我们再等 initial-interval * multiplier 秒再重试，重试时间不能超过 max-interval
+      exchange: ly.item.exchange # 交换机的名称
+    # 开启生产者确认机制，默认为false
+    publisher-confirms: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/yun6
+    username: root
+    password: li.13798908494
+    driver-class-name: com.mysql.jdbc.Driver
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+  instance:
+    prefer-ip-address: true
+    ip-adress: localhost # 保证获取的一定是ip，而不是计算机Host名称

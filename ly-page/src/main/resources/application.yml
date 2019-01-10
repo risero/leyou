@@ -1,0 +1,23 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: page-service
+  # RabbitMQ 配置
+  rabbitmq:
+    host: 192.168.175.147
+    username: leyou
+    password: li.13798908494
+    virtual-host: /leyou
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+
+      instance:
+        ip-address: localhost
+        lease-expiration-duration-in-seconds: 2
+        lease-renewal-interval-in-seconds: 5
+

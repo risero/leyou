@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    欢迎您：<span th:text="${user.friend.name}"></span>
+</h1>
+
+<!-- 使用 th:utext="html标签" 展示html代码 -->
+<span th:text="'<font color=\'red\'>hello</font>'"></span><br/>
+<span th:utext="'<font color=\'red\'>hello</font>'"></span><br/>
+
+<!-- 通过时间工具类，获取当前时间，还能格式化日期 -->
+<span th:text="${#dates.format(#dates.createNow(), 'yyyy-MM-dd HH:mm:ss')}"></span><br/>
+
+<!-- 还能调用String类中的方法 -->
+<!--<span th:text="${user.friend.name.substring(1)}"></span><br/>-->
+运算：<span th:text="200 * 100"></span>
+    <ul>
+        <li th:each="user : ${users}">
+            <span th:text="${user.name}"></span>
+            <span th:text="${user.age}"></span>
+        </li>
+    </ul>
+</body>
+
+<script th:inline="javascript">
+    const users = /*[[${users}]]*/[];
+    for (let index in users) {
+        // 遍历的是索引，通过数组[索引]来获取对象
+        // 很神奇的是在页面获取到的是转换成json数据的对象
+        console.log(users[index]);
+    }
+</script>
+</html>
