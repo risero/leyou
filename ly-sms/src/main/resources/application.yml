@@ -17,7 +17,7 @@ spring:
     host: 192.168.175.147
 ly:
   sms:
-    apikey: 21ad42623da6a935e68f530a47cfdbad # 你自己的apikey
-    userId: E10724
-    pwd: uNh86T
+    apikey:  # 梦网短信网关的apiKey
+    userId: # 梦网短信网关的userId
+    pwd: # 梦网短信网关的password
     ipAddress1: api02.monyun.cn:7901
