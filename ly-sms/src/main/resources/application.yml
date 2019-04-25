@@ -8,7 +8,7 @@ spring:
   # 配置RabbitMQ
   rabbitmq:
     username: leyou
-    password: li.13798908494
+    password: 
     virtual-host: /leyou
     host: 192.168.175.147
 
